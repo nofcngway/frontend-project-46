@@ -22,5 +22,12 @@
   "homepage": "https://github.com/nofcngway/frontend-project-46#readme",
   "dependencies": {
     "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^16.0.0"
   }
 }

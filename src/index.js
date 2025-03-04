@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import parseData from './parsers.js';
+import getDiff from './diff.js';
 
 const getAbsolutePath = (filepath) => path.resolve(process.cwd(), filepath);
 
@@ -15,7 +16,7 @@ const compareFiles = (filepath1, filepath2) => {
   const secondPath = getAbsolutePath(filepath2);
   const secondData = parseData(readFile(secondPath), getFileFormat(secondPath));
 
-  return [firstData, secondData];
+  return getDiff(firstData, secondData);
 };
 
 export default compareFiles;

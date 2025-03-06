@@ -4,8 +4,8 @@ install:
 lint:
 		npx eslint .
 
-make jest:
-		npx jest
+make test:
+		npm test
 
 test-coverage:
 		npm test -- --coverage

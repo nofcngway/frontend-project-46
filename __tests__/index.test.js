@@ -15,3 +15,11 @@ test('test json', () => {
   const result = fs.readFileSync(resultName, 'utf8');
   expect(compareFiles(firstFilename, secondFilename)).toEqual(result);
 });
+
+test('test yml', () => {
+  const firstFilename = getFixturePath('file1.yml');
+  const secondFilename = getFixturePath('file2.yml');
+  const resultName = getFixturePath('result.txt');
+  const result = fs.readFileSync(resultName, 'utf8');
+  expect(compareFiles(firstFilename, secondFilename)).toEqual(result);
+});

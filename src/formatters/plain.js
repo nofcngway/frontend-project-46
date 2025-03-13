@@ -14,7 +14,7 @@ const processingData = (data) => {
 
 const formatPlain = (diff, path = []) => {
   const filteredData = diff.filter((item) => item.char !== 'general');
-  const gg = filteredData.map((item) => {
+  const formattedOutput = filteredData.map((item) => {
     const node = path.concat(item.key);
     const newPath = node.join('.');
 
@@ -33,7 +33,7 @@ const formatPlain = (diff, path = []) => {
     return formatPlain(item.data, node);
   }).join('\n');
 
-  return gg;
+  return formattedOutput;
 };
 
 export default formatPlain;

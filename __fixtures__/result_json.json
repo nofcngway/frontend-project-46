@@ -1,0 +1,108 @@
+{
+  "common": [
+    {
+      "key": "follow",
+      "data": false,
+      "char": "add"
+    },
+    {
+      "key": "setting1",
+      "data": "Value 1",
+      "char": "general"
+    },
+    {
+      "key": "setting2",
+      "data": 200,
+      "char": "remove"
+    },
+    {
+      "key": "setting3",
+      "data": {
+        "first": true,
+        "second": null
+      },
+      "char": "different"
+    },
+    {
+      "key": "setting4",
+      "data": "blah blah",
+      "char": "add"
+    },
+    {
+      "key": "setting5",
+      "data": {
+        "key5": "value5"
+      },
+      "char": "add"
+    },
+    {
+      "key": "setting6",
+      "data": [
+        {
+          "key": "doge",
+          "data": [
+            {
+              "key": "wow",
+              "data": {
+                "first": "",
+                "second": "so much"
+              },
+              "char": "different"
+            }
+          ],
+          "char": "complex"
+        },
+        {
+          "key": "key",
+          "data": "value",
+          "char": "general"
+        },
+        {
+          "key": "ops",
+          "data": "vops",
+          "char": "add"
+        }
+      ],
+      "char": "complex"
+    }
+  ],
+  "group1": [
+    {
+      "key": "baz",
+      "data": {
+        "first": "bas",
+        "second": "bars"
+      },
+      "char": "different"
+    },
+    {
+      "key": "foo",
+      "data": "bar",
+      "char": "general"
+    },
+    {
+      "key": "nest",
+      "data": {
+        "first": {
+          "key": "value"
+        },
+        "second": "str"
+      },
+      "char": "different"
+    }
+  ],
+  "group2": {
+    "abc": 12345,
+    "deep": {
+      "id": 45
+    }
+  },
+  "group3": {
+    "deep": {
+      "id": {
+        "number": 45
+      }
+    },
+    "fee": 100500
+  }
+}

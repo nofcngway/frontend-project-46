@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 const createIndent = (depth) => `  ${' '.repeat(4 * (depth - 1))}`;
 const formatLine = (key, data, char, depth) => {
-  const formattedData = data === '' ? '' : ` ${data}`; // Сделано так из-за того, что значение ключа wow - пустое значение. Тесты не проходили.
+  const formattedData = data === '' ? '' : ` ${data}`; // Сделано так из-за того, что значения некоторых ключей - пустое значение. Тесты не проходили.
   return `${createIndent(depth)}${char} ${key}:${formattedData}`;
 };
 const tabBrackets = (depth) => `${' '.repeat(4 * depth)}`;

@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
-const createIndent = (depth) => `  ${' '.repeat(4).repeat(depth - 1)}`;
+const createIndent = (depth) => `  ${' '.repeat(4 * (depth - 1))}`;
 const formatLine = (key, data, char, depth) => {
   const formattedData = data === '' ? '' : ` ${data}`; // Сделано так из-за того, что значения некоторых ключей - пустое значение. Тесты не проходили.
   return `${createIndent(depth)}${char} ${key}:${formattedData}`;
 };
-const tabBrackets = (depth) => `${' '.repeat(4).repeat(depth)}`;
+const tabBrackets = (depth) => `${' '.repeat(4 * depth)}`;
 const wrapWithBraces = (body, depth) => `{\n${body}\n${tabBrackets(depth)}}`;
 
 const processingData = (data, depth) => {

@@ -17,4 +17,4 @@
 - `gendiff <filepath1> <filepath2> [--format <format>]` - начало работы с проектом. Можно выбрать стиль форматтера. Их всего три: `stylish`, `plain` и `json`. По дефолту выбран `stylish`.
 
 # Полная демонстрация работы проекта
-[![демонстрация](https://asciinema.org/a/CsC7N71vcCTGmXDlYnRkTSKnc.svg)](https://asciinema.org/a/CsC7N71vcCTGmXDlYnRkTSKnc)
+[![демонстрация](https://asciinema.org/a/CsC7N71vcCTGmXDlYnRkTSKnc.svg)](https://asciinema.org/a/BDosHKkDn1jRzkthn2POJ3Wpy)

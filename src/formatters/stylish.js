@@ -1,9 +1,7 @@
 import _ from 'lodash';
 
 const createIndent = (depth) => `  ${' '.repeat(4 * (depth - 1))}`;
-const formatLine = (key, data, char, depth) => {
-  return `${createIndent(depth)}${char} ${key}: ${data}`;
-};
+const formatLine = (key, data, char, depth) => `${createIndent(depth)}${char} ${key}: ${data}`;
 const tabBrackets = (depth) => `${' '.repeat(4 * depth)}`;
 const wrapWithBraces = (body, depth) => `{\n${body}\n${tabBrackets(depth)}}`;
 

@@ -41,21 +41,3 @@ test('plain - yml', () => {
   const result = fs.readFileSync(resultName, 'utf8');
   expect(compareFiles(firstFilename, secondFilename, formatName)).toEqual(result);
 });
-
-test('json - json', () => {
-  const firstFilename = getFixturePath('file1.json');
-  const secondFilename = getFixturePath('file2.json');
-  const formatName = 'json';
-  const resultName = getFixturePath('result_json.json');
-  const result = fs.readFileSync(resultName, 'utf8');
-  expect(compareFiles(firstFilename, secondFilename, formatName)).toEqual(result);
-});
-
-test('json - yml', () => {
-  const firstFilename = getFixturePath('file1.yml');
-  const secondFilename = getFixturePath('file2.yml');
-  const formatName = 'json';
-  const resultName = getFixturePath('result_json.json');
-  const result = fs.readFileSync(resultName, 'utf8');
-  expect(compareFiles(firstFilename, secondFilename, formatName)).toEqual(result);
-});

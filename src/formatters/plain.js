@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const processingData = (data) => {
-  if (_.isObject(data)) {
+  if (_.isPlainObject(data)) {
     return '[complex value]';
   }
 

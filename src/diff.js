@@ -16,7 +16,7 @@ const getDiff = (firstData, secondData) => {
       return { key, data: secondData[key], char: 'general' };
     }
 
-    if (_.isObject(firstData[key]) && _.isObject(secondData[key])) {
+    if (_.isPlainObject(firstData[key]) && _.isPlainObject(secondData[key])) {
       return { key, data: getDiff(firstData[key], secondData[key]), char: 'complex' };
     }
 

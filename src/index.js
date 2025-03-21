@@ -4,21 +4,19 @@ import parseData from './parsers.js';
 import getDiff from './diff.js';
 import getFormat from './formatters/index.js';
 
-const getAbsolutePath = (filepath) => path.resolve(process.cwd(), filepath);
+const parseFile = (filepath) => {
+  const absolutePath = path.resolve(process.cwd(), filepath);
+  const fileContent = fs.readFileSync(absolutePath, 'utf8');
+  const format = path.extname(absolutePath).slice(1);
 
-const readFile = (filepath) => fs.readFileSync(filepath, 'utf8');
-
-const getFileFormat = (filepath) => path.extname(filepath).slice(1);
+  return parseData(fileContent, format);
+};
 
 const compareFiles = (filepath1, filepath2, formatName = 'stylish') => {
-  const firstPath = getAbsolutePath(filepath1);
-  const firstData = parseData(readFile(firstPath), getFileFormat(firstPath));
-
-  const secondPath = getAbsolutePath(filepath2);
-  const secondData = parseData(readFile(secondPath), getFileFormat(secondPath));
+  const firstData = parseFile(filepath1);
+  const secondData = parseFile(filepath2);
 
   const diff = getDiff(firstData, secondData);
-
   return getFormat(diff, formatName);
 };
 

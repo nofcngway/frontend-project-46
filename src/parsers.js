@@ -1,6 +1,6 @@
 import yaml from 'js-yaml';
 
-const parseData = (data, format) => {
+const parseData = (fileContent, format) => {
   const parsers = {
     json: JSON.parse,
     yaml: yaml.load,
@@ -12,7 +12,7 @@ const parseData = (data, format) => {
     throw new Error(`Unknown parser: ${format}`);
   }
 
-  return parser(data);
+  return parser(fileContent);
 };
 
 export default parseData;

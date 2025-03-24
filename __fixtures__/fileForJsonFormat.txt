@@ -1,12 +1,12 @@
 [
   {
     "key": "host",
-    "data": "hexlet.io",
+    "children": "hexlet.io",
     "char": "general"
   },
   {
     "key": "timeout",
-    "data": {
+    "children": {
       "first": 50,
       "second": 20
     },
@@ -14,12 +14,12 @@
   },
   {
     "key": "proxy",
-    "data": "123.234.53.22",
+    "children": "123.234.53.22",
     "char": "add"
   },
   {
     "key": "verbose",
-    "data": true,
+    "children": true,
     "char": "remove"
   }
 ]

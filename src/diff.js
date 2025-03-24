@@ -5,22 +5,22 @@ const getDiff = (firstData, secondData) => {
 
   const diff = keys.flatMap((key) => {
     if (!_.has(firstData, key)) {
-      return { key, data: secondData[key], char: 'add' };
+      return { key, children: secondData[key], type: 'add' };
     }
 
     if (!_.has(secondData, key)) {
-      return { key, data: firstData[key], char: 'remove' };
+      return { key, children: firstData[key], type: 'remove' };
     }
 
     if (firstData[key] === secondData[key]) {
-      return { key, data: secondData[key], char: 'general' };
+      return { key, children: secondData[key], type: 'general' };
     }
 
     if (_.isPlainObject(firstData[key]) && _.isPlainObject(secondData[key])) {
-      return { key, data: getDiff(firstData[key], secondData[key]), char: 'complex' };
+      return { key, children: getDiff(firstData[key], secondData[key]), type: 'complex' };
     }
 
-    return { key, data: { first: firstData[key], second: secondData[key] }, char: 'different' };
+    return { key, children: { first: firstData[key], second: secondData[key] }, type: 'different' };
   });
 
   return diff;

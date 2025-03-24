@@ -13,24 +13,24 @@ const processingData = (data) => {
 };
 
 const formatPlain = (diff, path = []) => {
-  const filteredData = diff.filter((item) => item.char !== 'general');
+  const filteredData = diff.filter((item) => item.type !== 'general');
   const formattedOutput = filteredData.map((item) => {
     const node = path.concat(item.key);
     const newPath = node.join('.');
 
-    if (item.char === 'add') {
-      return `Property '${newPath}' was added with value: ${processingData(item.data)}`;
+    if (item.type === 'add') {
+      return `Property '${newPath}' was added with value: ${processingData(item.children)}`;
     }
 
-    if (item.char === 'remove') {
+    if (item.type === 'remove') {
       return `Property '${newPath}' was removed`;
     }
 
-    if (item.char === 'different') {
-      return `Property '${newPath}' was updated. From ${processingData(item.data.first)} to ${processingData(item.data.second)}`;
+    if (item.type === 'different') {
+      return `Property '${newPath}' was updated. From ${processingData(item.children.first)} to ${processingData(item.children.second)}`;
     }
 
-    return formatPlain(item.data, node);
+    return formatPlain(item.children, node);
   }).join('\n');
 
   return formattedOutput;

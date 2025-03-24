@@ -18,21 +18,21 @@ const processingData = (data, depth) => {
 };
 
 const formatDiff = (diff, depth = 0) => {
-  const items = diff.flatMap(({ key, data, char }) => {
+  const items = diff.flatMap(({ key, children, type }) => {
     const chars = { add: '+', remove: '-', general: ' ' };
 
-    if (char === 'different') {
+    if (type === 'different') {
       return [
-        formatLine(key, processingData(data.first, depth + 1), chars.remove, depth + 1),
-        formatLine(key, processingData(data.second, depth + 1), chars.add, depth + 1),
+        formatLine(key, processingData(children.first, depth + 1), chars.remove, depth + 1),
+        formatLine(key, processingData(children.second, depth + 1), chars.add, depth + 1),
       ];
     }
 
-    if (char === 'complex') {
-      return formatLine(key, formatDiff(data, depth + 1), ' ', depth + 1);
+    if (type === 'complex') {
+      return formatLine(key, formatDiff(children, depth + 1), ' ', depth + 1);
     }
 
-    return formatLine(key, processingData(data, depth + 1), chars[char], depth + 1);
+    return formatLine(key, processingData(children, depth + 1), chars[type], depth + 1);
   });
 
   const body = items.join('\n');

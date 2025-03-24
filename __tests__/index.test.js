@@ -25,10 +25,10 @@ test.each([
 
 test('json - json', () => {
   const diff = [
-    { key: 'host', data: 'hexlet.io', char: 'general' },
-    { key: 'timeout', data: { first: 50, second: 20 }, char: 'different' },
-    { key: 'proxy', data: '123.234.53.22', char: 'add' },
-    { key: 'verbose', data: true, char: 'remove' },
+    { key: 'host', children: 'hexlet.io', char: 'general' },
+    { key: 'timeout', children: { first: 50, second: 20 }, char: 'different' },
+    { key: 'proxy', children: '123.234.53.22', char: 'add' },
+    { key: 'verbose', children: true, char: 'remove' },
   ];
 
   const actualValue = formatJson(diff);
